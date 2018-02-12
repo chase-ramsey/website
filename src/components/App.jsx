@@ -4,7 +4,7 @@ import { Card, CardNav, ContactInfo, MobileTitle, Panel, Title } from './Panels.
 export default class App extends React.Component {
     render() {
         return (
-            <div>
+            <div id="wrapper">
                 <Panel
                     id="home"
                     containerClasses="section hero is-fullheight is-bold is-dark"
