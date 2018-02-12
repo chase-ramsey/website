@@ -51,7 +51,7 @@ class Card extends React.Component {
                             </div>
                         </div>
                         <div className={this.props.cardClasses}>
-                            {this.props.cardBody}
+                            {this.props.children}
                         </div>
                     </div>
                 </div>
