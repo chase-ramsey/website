@@ -1,5 +1,13 @@
+@import "../node_modules/bulma/bulma.sass"
+
 .hero-body
     padding: 3rem 0;
+
+#home 
+    .hero-body
+        background: url('./me.png')
+        background-size: contain
+        background-repeat: no-repeat
 
 h1.title.title-desktop
     font-size: 3rem
@@ -16,16 +24,16 @@ h1.title.title-touch
     border-radius: 3px 3px 0 0
 
 .card-header.is-danger
-    background: #ff3860
+    background: $danger
 
 .card-header.is-link
-    background: #3273dc
+    background: $link
 
 .card-header.is-primary
-    background: #00d1b2
+    background: $primary
 
 .card-header.is-warning
-    background: #ffdd57
+    background: $warning
 
 .card-content.is-dark
-    background: #363636
+    background: $dark

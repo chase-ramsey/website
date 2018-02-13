@@ -19,9 +19,10 @@ const config = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+        rules: [
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.(png|svg|jpg|gif)$/, use: 'file-loader' },
             { test: /\.sass$/, loader: 
                 ExtractTextPlugin.extract({
                     fallback: 'style-loader',

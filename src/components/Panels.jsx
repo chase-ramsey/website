@@ -20,6 +20,7 @@ class Title extends React.Component {
         return (
             <Fade down>
                 <div className="column is-hidden-touch">
+                    {this.props.image}
                     <h1 className={this.props.titleClasses}>{this.props.title}</h1>
                     {this.props.extra}
                 </div>
