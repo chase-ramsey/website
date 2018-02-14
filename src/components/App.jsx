@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardNav, ContactInfo, MobileTitle, Panel, Title } from './Panels.jsx'
+import { Card, CardNav, ContactInfo, MobileTitle, NoFadeTitle, Panel, Title } from './Panels.jsx'
 
 export default class App extends React.Component {
     render() {
@@ -9,7 +9,8 @@ export default class App extends React.Component {
                     id="home"
                     containerClasses="section hero is-fullheight is-bold is-dark"
                 >
-                    <Title
+                    <NoFadeTitle
+                        columnClasses="column is-hidden-touch portrait"
                         titleClasses="title title-desktop has-text-warning"
                         title="Chase Ramsey"
                         extra={
@@ -28,6 +29,7 @@ export default class App extends React.Component {
                         }
                     />
                     <Card
+                        id="home-nav"
                         headerClasses="card-header is-link"
                         subtitleClasses="subtitle has-text-light"
                         header="About Me"

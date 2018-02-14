@@ -15,14 +15,28 @@ function Panel(props) {
     )   
 }
 
+class NoFadeTitle extends React.Component {
+    render() {
+        return (
+            <div className={this.props.columnClasses || "column is-hidden-touch"}>
+                <div className="title-wrapper">
+                    <h1 className={this.props.titleClasses}>{this.props.title}</h1>
+                    {this.props.extra}
+                </div>
+            </div>
+        )
+    }
+}
+
 class Title extends React.Component {
     render() {
         return (
             <Fade down>
-                <div className="column is-hidden-touch">
-                    {this.props.image}
-                    <h1 className={this.props.titleClasses}>{this.props.title}</h1>
-                    {this.props.extra}
+                <div className={this.props.columnClasses || "column is-hidden-touch"}>
+                    <div className="title-wrapper">
+                        <h1 className={this.props.titleClasses}>{this.props.title}</h1>
+                        {this.props.extra}
+                    </div>
                 </div>
             </Fade>
         )
@@ -45,7 +59,7 @@ class Card extends React.Component {
         return (
             <Fade up>
                 <div className="column">
-                    <div className="card">
+                    <div id={this.props.id} className="card">
                         <div className={this.props.headerClasses}>
                             <div className="card-header-title">
                                 <h3 className={this.props.subtitleClasses}>{this.props.header}</h3>
@@ -103,10 +117,11 @@ class ContactInfo extends React.Component {
 }
 
 module.exports = {
-    Panel: Panel,
-    Title: Title,
-    MobileTitle: MobileTitle,
     Card: Card,
     CardNav: CardNav,
-    ContactInfo: ContactInfo
+    ContactInfo: ContactInfo,
+    MobileTitle: MobileTitle,
+    NoFadeTitle: NoFadeTitle,
+    Panel: Panel,
+    Title: Title
 }
