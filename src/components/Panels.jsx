@@ -6,7 +6,8 @@ function Panel(props) {
         <div id={props.id} className={props.containerClasses}>
             <div className="hero-body">
                 <div className="container">
-                    <div className="columns">
+                        {props.banner}
+                    <div className="columns is-multiline">
                         {props.children}
                     </div>
                 </div>
@@ -15,15 +16,34 @@ function Panel(props) {
     )   
 }
 
-class NoFadeTitle extends React.Component {
+class Banner extends React.Component {
     render() {
         return (
-            <div className={this.props.columnClasses || "column is-hidden-touch"}>
-                <div className="title-wrapper">
-                    <h1 className={this.props.titleClasses}>{this.props.title}</h1>
-                    {this.props.extra}
+            <Fade down>
+                <div id="banner" className="columns banner">
+                    <div className="column portrait is-half">
+                    </div>
+                    <div className="column is-half is-portrait-opposite is-hidden-touch">
+                        <div className="notification is-warning">
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </Fade>
+        )
+    }
+}
+
+class FadeUpTitle extends React.Component {
+    render() {
+        return (
+            <Fade up>
+                <div id="banner-title" className={this.props.columnClasses || "column is-hidden-touch"}>
+                    <div className="title-wrapper notification is-link">
+                        <h1 className={this.props.titleClasses}>{this.props.title}</h1>
+                        {this.props.extra}
+                    </div>
+                </div>
+            </Fade>
         )
     }
 }
@@ -58,8 +78,8 @@ class Card extends React.Component {
     render() {
         return (
             <Fade up>
-                <div className="column">
-                    <div id={this.props.id} className="card">
+                <div id={this.props.id} className={this.props.columnClasses || 'column'}>
+                    <div className="card">
                         <div className={this.props.headerClasses}>
                             <div className="card-header-title">
                                 <h3 className={this.props.subtitleClasses}>{this.props.header}</h3>
@@ -75,7 +95,34 @@ class Card extends React.Component {
     }
 }
 
-function CardNav(props) {
+class DesktopBannerNav extends React.Component {
+    render() {
+        return (
+            <Fade up>
+                <div id="home-nav" className="column is-hidden-touch">
+                    <div className="notification is-link">
+                        <div className="columns is-multiline">
+                            <div className="column is-half">
+                                <a className="subtitle" href="#background">Background</a>
+                            </div>
+                            <div className="column is-half">
+                                <a className="subtitle" href="#experience">Experience</a>
+                            </div>
+                            <div className="column is-half">
+                                <a className="subtitle" href="#projects">Projects</a>
+                            </div>
+                            <div className="column is-half">
+                                <a className="subtitle" href="#contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Fade>
+        )
+    }
+}
+
+function MobileBannerNav(props) {
     return (
         <div className="columns has-text-centered">
             <a href="#background" className="column">Background</a>
@@ -117,11 +164,13 @@ class ContactInfo extends React.Component {
 }
 
 module.exports = {
+    Banner: Banner,
     Card: Card,
-    CardNav: CardNav,
+    DesktopBannerNav: DesktopBannerNav,
+    MobileBannerNav: MobileBannerNav,
     ContactInfo: ContactInfo,
     MobileTitle: MobileTitle,
-    NoFadeTitle: NoFadeTitle,
+    FadeUpTitle: FadeUpTitle,
     Panel: Panel,
     Title: Title
 }

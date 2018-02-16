@@ -1,17 +1,16 @@
 @import "../node_modules/bulma/bulma.sass"
 
 .portrait
-    height: 525px
-    background: url('./me_yellow.png')
-    background-size: contain
+    background: url('./me_banner.png')
+    height: 250px
+    background-size: cover
     background-repeat: no-repeat
-    .title-wrapper
-        position: absolute
-        bottom: 20px
 
-#home-nav
-    position: relative
-    top: -12px
+.is-portrait-opposite
+    padding: 0
+    .notification
+        height: 250px
+        border-radius: 0
 
 .hero-body
     padding: 3rem 0;
@@ -30,6 +29,9 @@ h1.title.title-touch
 .card-header
     border-radius: 3px 3px 0 0
 
+.card-header.is-dark
+    background: $dark
+
 .card-header.is-danger
     background: $danger
 
@@ -44,3 +46,22 @@ h1.title.title-touch
 
 .card-content.is-dark
     background: $dark
+
+#banner-title, #home-nav
+    padding: 0
+    .notification
+        height: 150px
+
+#banner-title .notification
+    border-radius: 0
+
+#home-nav
+    a
+        text-decoration: none
+        font-size: 1.3rem
+    a:hover
+        color: $warning
+    .notification
+        padding: 30px
+        border-radius: 0
+

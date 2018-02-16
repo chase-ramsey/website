@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardNav, ContactInfo, MobileTitle, NoFadeTitle, Panel, Title } from './Panels.jsx'
+import { Banner, Card, ContactInfo, DesktopBannerNav, MobileBannerNav, MobileTitle, FadeUpTitle, Panel, Title } from './Panels.jsx'
 
 export default class App extends React.Component {
     render() {
@@ -8,9 +8,12 @@ export default class App extends React.Component {
                 <Panel
                     id="home"
                     containerClasses="section hero is-fullheight is-bold is-dark"
+                    banner={
+                        <Banner />
+                    }
                 >
-                    <NoFadeTitle
-                        columnClasses="column is-hidden-touch portrait"
+                    <FadeUpTitle
+                        columnClasses="column is-hidden-touch"
                         titleClasses="title title-desktop has-text-warning"
                         title="Chase Ramsey"
                         extra={
@@ -30,13 +33,15 @@ export default class App extends React.Component {
                     />
                     <Card
                         id="home-nav"
+                        columnClasses="column is-hidden-desktop"
                         headerClasses="card-header is-link"
                         subtitleClasses="subtitle has-text-light"
                         header="About Me"
                         cardClasses="card-content card-nav has-text-link"
                     >
-                        <CardNav />
+                        <MobileBannerNav />
                     </Card>
+                    <DesktopBannerNav />
                 </Panel>
                 <Panel
                     id="background"
@@ -128,7 +133,7 @@ export default class App extends React.Component {
                                 <strong>BudgetHound</strong>
                             </a> (under construction) is a budgeting app built in Django that helps you create and meet 
                             spending goals. Modeled after calorie-counting apps, BudgetHound invites you to log your  
-                            transactions as you spend and gives you feedback about your daily and monthly standing.
+                            transactions as you spend and gives you feedback about your daily and monthly budget standing.
                         </p><br />
                         <p>
                             <a href="https://github.com/chase-ramsey/fogdog" className="has-text-danger">
