@@ -1,7 +1,14 @@
+$dark:     #485460
+$warning:  #fed330
+$link:     #3867d6
+$danger:   #fc5c65
+$primary:  #2bcbba
+$black:    #1e272e
+
 @import "../node_modules/bulma/bulma.sass"
 
 .portrait
-    background: url('./me_banner.png')
+    background: url('./me_banner_red.png')
     height: 250px
     background-size: cover
     background-repeat: no-repeat
@@ -13,7 +20,7 @@
         border-radius: 0
 
 .hero-body
-    padding: 3rem 0;
+    padding: 3rem 0
 
 h1.title.title-desktop
     font-size: 3rem
@@ -22,6 +29,9 @@ h1.title.title-touch
     font-size: 2.5rem
     margin-bottom: 20px
 
+.notification.is-black
+    background: $black
+
 .card
     border-radius: 3px
     box-shadow: 0px 1px 3px #333
@@ -29,8 +39,8 @@ h1.title.title-touch
 .card-header
     border-radius: 3px 3px 0 0
 
-.card-header.is-dark
-    background: $dark
+.card-header.is-black
+    background: $black
 
 .card-header.is-danger
     background: $danger
@@ -44,8 +54,8 @@ h1.title.title-touch
 .card-header.is-warning
     background: $warning
 
-.card-content.is-dark
-    background: $dark
+.card-content.is-black
+    background: $black
 
 #banner-title, #home-nav
     padding: 0
@@ -57,10 +67,11 @@ h1.title.title-touch
 
 #home-nav
     a
+        color: $grey-lighter
         text-decoration: none
         font-size: 1.3rem
     a:hover
-        color: $warning
+        color: $white
     .notification
         padding: 30px
         border-radius: 0

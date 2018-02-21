@@ -13,7 +13,7 @@ function Panel(props) {
                 </div>
             </div>
         </div>
-    )   
+    )
 }
 
 class Banner extends React.Component {
@@ -21,10 +21,10 @@ class Banner extends React.Component {
         return (
             <Fade down>
                 <div id="banner" className="columns banner">
-                    <div className="column portrait is-half">
+                    <div className="column portrait is-half is-hidden-touch">
                     </div>
                     <div className="column is-half is-portrait-opposite is-hidden-touch">
-                        <div className="notification is-warning">
+                        <div className="notification is-danger">
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ class FadeUpTitle extends React.Component {
         return (
             <Fade up>
                 <div id="banner-title" className={this.props.columnClasses || "column is-hidden-touch"}>
-                    <div className="title-wrapper notification is-link">
+                    <div className="title-wrapper notification is-black has-text-primary">
                         <h1 className={this.props.titleClasses}>{this.props.title}</h1>
                         {this.props.extra}
                     </div>
@@ -100,7 +100,7 @@ class DesktopBannerNav extends React.Component {
         return (
             <Fade up>
                 <div id="home-nav" className="column is-hidden-touch">
-                    <div className="notification is-link">
+                    <div className="notification is-black">
                         <div className="columns is-multiline">
                             <div className="column is-half">
                                 <a className="subtitle" href="#background">Background</a>
@@ -124,7 +124,7 @@ class DesktopBannerNav extends React.Component {
 
 function MobileBannerNav(props) {
     return (
-        <div className="columns has-text-centered">
+        <div className="columns has-text-centered has-text-danger">
             <a href="#background" className="column">Background</a>
             <a href="#experience" className="column">Experience</a>
             <a href="#projects" className="column">Projects</a>
